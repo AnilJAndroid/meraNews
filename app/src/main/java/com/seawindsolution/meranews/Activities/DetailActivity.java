@@ -25,6 +25,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView titleTextView, descriptionTextView;
     private ImageView nameImageView;
     private RequestOptions requestOptions;
+    private NewsModel model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +52,7 @@ public class DetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-       NewsModel model = (NewsModel) getIntent().getSerializableExtra("single_new");
+        model = (NewsModel) getIntent().getSerializableExtra("single_new");
 
         titleTextView = findViewById(R.id.titleTextView);
         descriptionTextView = findViewById(R.id.descriptionTextView);
@@ -81,8 +81,7 @@ public class DetailActivity extends AppCompatActivity {
                 finish();
                 return true;
             case R.id.btn_share:
-                String str = "Is this a 'Sarkar' or a Circus?' : Jignesh Mevani";
-                String content = "https://meranews.in/"+str;
+                String content = "http://www.meranews.in/news/view/"+model.getNews_id_for_url();
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, content);
