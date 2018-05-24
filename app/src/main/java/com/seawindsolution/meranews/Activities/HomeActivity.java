@@ -73,7 +73,6 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
         PreLoadingLinearLayoutManager gm = new PreLoadingLinearLayoutManager(getApplicationContext());
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         top_news_recyclerview = findViewById(R.id.top_news_recyclerview);

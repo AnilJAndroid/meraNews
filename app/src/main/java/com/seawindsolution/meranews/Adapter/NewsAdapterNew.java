@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.seawindsolution.meranews.Activities.DetailActivity;
 import com.seawindsolution.meranews.Model.NewsModel;
@@ -72,7 +73,7 @@ public abstract class NewsAdapterNew extends RecyclerView.Adapter<RecyclerView.V
             NewsModel model = data.get(position);
             vh.titleCardView.setText(model.getTitle());
             vh.titleCardView.setTypeface(typeface);
-//          Glide.with(context).load(model.getTw_image()).apply(requestOptions).into(vh.imageCardView);
+            Glide.with(context).load(model.getTw_image()).apply(requestOptions).into(vh.imageCardView);
             vh.iv_favorite.setImageResource(model.isFavorite()?R.drawable.ic_bookmark_on:R.drawable.ic_bookmark_off);
             vh.iv_favorite.setOnClickListener(v -> {
                 model.setFavorite(!model.isFavorite());
