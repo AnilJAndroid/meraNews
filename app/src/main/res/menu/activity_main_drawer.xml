@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+      <!--  <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home_text_small" />-->
+        <item
+            android:id="@+id/nav_gujarat"
+            android:icon="@drawable/ic_gujarat"
+            android:title="@string/gujarat_text_small" />
+        <item
+            android:id="@+id/nav_national"
+            android:icon="@drawable/ic_national"
+            android:title="@string/national_text_small" />
+        <item
+            android:id="@+id/nav_international"
+            android:icon="@drawable/ic_international"
+            android:title="@string/international_text_small" />
+        <item
+            android:id="@+id/nav_entertainment"
+            android:icon="@drawable/ic_entertainment"
+            android:title="@string/entertainment_text_small" />
+        <item
+            android:id="@+id/nav_business"
+            android:icon="@drawable/ic_business"
+            android:title="@string/business_text_small" />
+        <item
+            android:id="@+id/nav_sports"
+            android:icon="@drawable/ic_sports"
+            android:title="@string/sports_text_small" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/ic_healthandlifestyle"
+            android:title="@string/health_text_small" />
+        <item
+            android:id="@+id/nav_editorial"
+            android:icon="@drawable/ic_editorial"
+            android:title="@string/editorial_text_small" />
+        <item
+            android:id="@+id/nav_exclusive"
+            android:icon="@drawable/ic_exclusive"
+            android:title="@string/exclusive_text_small" />
+        <item
+            android:id="@+id/nav_automobile"
+            android:icon="@drawable/ic_automobile"
+            android:title="@string/automobile_text_small" />
+        <!--<item
+            android:id="@+id/nav_contact_us"
+            android:icon="@drawable/ic_contacts_us"
+            android:title="@string/contact_us_text_small" />
+        <item
+            android:id="@+id/nav_faq"
+            android:icon="@drawable/ic_faq"
+            android:title="@string/faq_text_small" />-->
+    </group>
+    <group
+        android:id="@+id/menu_other"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_language"
+            android:checked="true"
+            android:icon="@drawable/ic_language"
+            android:title="@string/languages_text_small" />
+        <item
+            android:id="@+id/nav_termandcondition"
+            android:checked="true"
+            android:icon="@drawable/ic_termandcondtion"
+            android:title="@string/termandcondtion_text_small" />
+    </group>
+
+    <group
+        android:id="@+id/menu_socialmedia"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_facebook"
+            android:checked="true"
+            android:icon="@drawable/ic_facebook"
+            android:title="@string/facebook_text_small" />
+        <item
+            android:id="@+id/nav_twitter"
+            android:checked="true"
+            android:icon="@drawable/ic_icons8_twitter"
+            android:title="@string/twitter_text_small" />
+        <item
+            android:id="@+id/nav_google"
+            android:checked="true"
+            android:icon="@drawable/ic_google_plus"
+            android:title="@string/google_text_small" />
+        <item
+            android:id="@+id/nav_instagram"
+            android:checked="true"
+            android:icon="@drawable/ic_instagram"
+            android:title="@string/instagram_text_small" />
+        <item
+            android:id="@+id/nav_youtube"
+            android:checked="true"
+            android:icon="@drawable/ic_youtube"
+            android:title="@string/youtube_text_small" />
+    </group>
+
+ <!--   <item
+        android:id="@+id/menu_multimedia"
+        android:title="Mutimedia"
+        android:layout_gravity="bottom"
+        android:checked="true">
+        <menu>
+            <item
+                android:id="@+id/nav_photo"
+                android:icon="@drawable/ic_photo"
+                android:title="@string/photos_text_small" />
+            <item
+                android:id="@+id/nav_video"
+                android:icon="@drawable/ic_play_video"
+                android:title="@string/video_text_small" />
+        </menu>
+    </item>-->
+    <!--<group
+        android:id="@+id/menu_multimedia"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_photo"
+            android:checked="true"
+            android:icon="@drawable/ic_photo"
+            android:title="@string/photos_text_small" />
+        <item
+            android:id="@+id/nav_video"
+            android:checked="true"
+            android:icon="@drawable/ic_video"
+            android:title="@string/video_text_small" />
+        <item
+            android:id="@+id/nav_podcast"
+            android:checked="true"
+            android:icon="@drawable/ic_padcast"
+            android:title="@string/podcast_text_small" />
+    </group>-->
+   <!-- <group
+        android:id="@+id/menu_bottom"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_lang"
+            android:checked="true"
+            android:icon="@drawable/ic_language"
+            android:title="@string/languages_text_small" />
+    </group>-->
+</menu>

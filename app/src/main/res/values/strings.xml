@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">MeraNews</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="home_text_small">Home</string>
+    <string name="gujarat_text_small">Gujarat</string>
+    <string name="national_text_small">National</string>
+    <string name="international_text_small">International</string>
+    <string name="entertainment_text_small">Entertainment</string>
+    <string name="business_text_small">Business</string>
+    <string name="sports_text_small">Sports</string>
+    <string name="health_text_small">Health &amp; Lifestyle</string>
+    <string name="editorial_text_small">Editorial</string>
+    <string name="exclusive_text_small">Exclusive</string>
+    <string name="automobile_text_small">Automobile</string>
+    <string name="FAQ_text_small">FAQ</string>
+    <string name="contact_us_text_small">Contact Us</string>
+    <string name="languages_text_small">Languages</string>
+    <string name="termandcondtion_text_small">Terms &amp; Condtions</string>
+    <string name="facebook_text_small">Facebook</string>
+    <string name="twitter_text_small">Twitter</string>
+    <string name="google_text_small">Google Plus</string>
+    <string name="instagram_text_small">Instagram</string>
+    <string name="youtube_text_small">Youtube</string>
+    <string name="photos_text_small">Photos</string>
+    <string name="video_text_small">Videos</string>
+    <string name="podcast_text_small">Podcast</string>
+
+    <string name="home_text_capital">HOME</string>
+    <string name="gujarat_text_capital">GUJARAT</string>
+    <string name="national_text_capital">NATIONAL</string>
+    <string name="international_text_capital">INTERNATIONAL</string>
+    <string name="entertainment_text_capital">ENTERTAINMENT</string>
+    <string name="business_text_capital">BUSINESS</string>
+    <string name="sports_text_capital">SPORTS</string>
+    <string name="health_text_capital">HEALTH &amp; LIFESTYLE</string>
+    <string name="editorial_text_capital">EDITORIAL</string>
+    <string name="exclusive_text_capitall">EXCLUSIVE</string>
+    <string name="automobile_text_capital">AUTOMOBILE</string>
+
+    <!--menus-->
+    <string name="menu_read_leter">Read Later</string>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_share_this_app">Share this app</string>
+    <string name="faq_text_small">FAQ</string>
+    <string name="error_player">Error in Youtube API</string>
+    <string name="txt_long_desc">In this introductory episode of Android Testing Patterns, \n Wojtek Kalicinski introduces the two main types of
+        \n tests that you will write for your app. Running Unit Tests and Instrumented Tests is both \nsupported by Android Studio and we offer some great tools for testing in the Android Testing Support Library.
+        \nOne of them is Espresso, a UI testing framework that we\'ll concentrate on in Season 1 of ATP. Learn more at http://developer.android.com/training... Codelabs - code-labs.io/codelabs/android-testing Testing samples - github.com/googlesamples/android-testing Android Testing Blueprint - github.com/googlesamples/android-testing-templates Android Testing Support Library - google.github.io/android-testing-support-library</string>
+    <string name="txt_please">Please Wait...</string>
+    <string name="txt_internet_connection">No Internet Connection!</string>
+
+    <string name="dot">\u2022</string>
+
+</resources>

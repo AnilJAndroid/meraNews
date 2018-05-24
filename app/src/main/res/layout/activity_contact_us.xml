@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.seawindsolution.meranews.Activities.ContactUsActivity"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/contact"
+        android:scaleType="centerInside"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/logo"
+        android:scaleType="centerInside"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_20">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="314, Abhishree Complex, Opp. Star Bazar, Nr. Jodhpur Cross Road, Satellite, Ahmedabad, Gujarat 380015"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="@dimen/dp_20"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="08140071222"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

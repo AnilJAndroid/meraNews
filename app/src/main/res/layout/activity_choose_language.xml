@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#000"
+        android:shadowDx="-1"
+        android:shadowDy="-1"
+        android:shadowRadius="8"
+        android:text="Languages"
+        android:textColor="#fff"
+        android:textSize="@dimen/sp_36" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_10"
+        android:text="Choose Your Preferred Language"
+        android:textColor="#99ffffff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_20"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/english"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="@dimen/dp_5"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210"
+                android:scaleType="centerCrop"
+                android:src="@drawable/english" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210"
+                android:background="#80000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210">
+
+                <TextView
+                    android:id="@+id/tvEng"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:shadowColor="#000"
+                    android:shadowDx="-1"
+                    android:shadowDy="-1"
+                    android:shadowRadius="3"
+                    android:text="English"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/tick_english"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@id/tvEng"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dp_10"
+                    android:src="@drawable/ic_tick"
+                    android:tint="#fff" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/gujarati"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="@dimen/dp_5"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gujarati" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210"
+                android:background="#80000000" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_210">
+
+                <TextView
+                    android:id="@+id/tvGuj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:shadowColor="#000"
+                    android:shadowDx="-1"
+                    android:shadowDy="-1"
+                    android:shadowRadius="3"
+                    android:text="ગુજરાતી"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/tick_gujarati"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvGuj"
+                    android:visibility="gone"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dp_10"
+                    android:src="@drawable/ic_tick"
+                    android:tint="#fff" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_go"
+        android:tint="@color/white"
+        app:fabSize="normal" />
+
+</LinearLayout>
