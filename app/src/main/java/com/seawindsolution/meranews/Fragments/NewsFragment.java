@@ -1,22 +1,22 @@
 package com.seawindsolution.meranews.Fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.seawindsolution.meranews.Adapter.NewsAdapterNew;
+import com.seawindsolution.meranews.Adapter.DataAdapter;
 import com.seawindsolution.meranews.Model.NewsModel;
 import com.seawindsolution.meranews.R;
 import com.seawindsolution.meranews.Utils.DividerItemDecoration;
 import com.seawindsolution.meranews.Utils.Functions;
-import com.seawindsolution.meranews.Utils.PreLoadingLinearLayoutManager;
+import com.seawindsolution.meranews.Utils.WrapContentLinearLayoutManager;
 import com.seawindsolution.meranews.Web.WebService;
 
 import org.json.JSONException;
@@ -32,8 +32,10 @@ import retrofit2.Response;
 public class NewsFragment extends Fragment {
 
     RecyclerView news_list;
-    NewsAdapterNew newsAdapter;
+    DataAdapter newsAdapter;
     ProgressBar Loading;
+    ArrayList<NewsModel> myDataset = new ArrayList<>();
+    Handler  handler;
 
     boolean loading = false;
 
@@ -50,20 +52,19 @@ public class NewsFragment extends Fragment {
         id = getArguments().getString("id");
         type = getArguments().getString("type");
 
-//        final LinearLayoutManager gm = new LinearLayoutManager(getActivity());
-        PreLoadingLinearLayoutManager gm = new PreLoadingLinearLayoutManager(getActivity());
-        newsAdapter = new NewsAdapterNew(getActivity(),type, new ArrayList<>()) {
-            @Override
-            public void load() {
-                if(!loading){
-                    page++;
-                    doBacground();
-                }
-            }
-        };
+        handler = new Handler();
+        WrapContentLinearLayoutManager gm = new WrapContentLinearLayoutManager(getActivity());
         news_list.setLayoutManager(gm);
         news_list.addItemDecoration(new DividerItemDecoration(getResources()));
+        news_list.setHasFixedSize(true);
+        newsAdapter = new DataAdapter(getActivity(),type,myDataset,news_list);
         news_list.setAdapter(newsAdapter);
+        newsAdapter.setOnLoadMoreListener(() -> {
+            page++;
+            myDataset.add(null);
+            newsAdapter.notifyItemInserted(myDataset.size()-1);
+            doBacground();
+        });
         doBacground();
         return root;
     }
@@ -80,34 +81,35 @@ public class NewsFragment extends Fragment {
     void getNews(){
         if(page==1)
             Loading.setVisibility(View.VISIBLE);
-        else
-            newsAdapter.updateFooter(true);
-        Log.d("WebAPI page : ", String.valueOf(page));
+        else{
+            myDataset.remove(myDataset.size() - 1);
+            newsAdapter.notifyItemRemoved(myDataset.size());
+        }
        retrofit2.Call<ResponseBody> News = WebService.getWebService().getStory_Category(page,id);
        News.enqueue(new Callback<ResponseBody>() {
            @Override
            public void onResponse(retrofit2.Call<ResponseBody> call, Response<ResponseBody> response) {
                if(response.isSuccessful()){
+
                    loading = false;
                    ArrayList<NewsModel> temp = new ArrayList<>();
                    try {
                        String strRes = response.body().string();
                        JSONObject jsonObject = new JSONObject(strRes);
                        if (jsonObject.optString("success").equals("true")) {
-                           temp.addAll(Functions.getNews(jsonObject));
-                           newsAdapter.addModels(temp);
+                           myDataset.addAll(Functions.getNews(jsonObject));
+                           newsAdapter.notifyItemInserted(myDataset.size());
+                           newsAdapter.setLoaded();
                        }
                    } catch (IOException|JSONException e) {
                        e.printStackTrace();
                    }
-                   newsAdapter.updateFooter(false);
                    Loading.setVisibility(View.GONE);
                }
            }
            @Override
            public void onFailure(retrofit2.Call<ResponseBody> call, Throwable t) {
                Loading.setVisibility(View.GONE);
-               newsAdapter.updateFooter(false);
            }
        });
     }

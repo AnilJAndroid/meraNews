@@ -7,4 +7,5 @@
     android:layout_height="wrap_content"
     android:indeterminateDrawable="@drawable/progress"
     android:layout_gravity="center"
-    android:indeterminate="true"/>
+    android:indeterminate="true"
+    android:padding="@dimen/dp_5"/>
